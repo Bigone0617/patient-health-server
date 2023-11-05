@@ -6,6 +6,7 @@ import {
   Param,
   Patch,
   Post,
+  Query,
 } from '@nestjs/common';
 import { PatientService } from './patient.service';
 import { Patient } from './schema/patient.schema';
@@ -19,9 +20,18 @@ export class PatientController {
     return this.patientService.getAllPatients();
   }
 
-  @Get('/:id')
+  @Get('/id/:id')
   getUerById(@Param('id') id: string): Promise<Patient> {
     return this.patientService.getPatientById(id);
+  }
+
+  @Get('/search')
+  getPatientListBySearch(
+    @Query('searchTerm') searchTerm: string,
+    @Query('searchField') searchField: string,
+  ): Promise<Patient[]> {
+    console.log('adasdada');
+    return this.patientService.getPatientsBySearch(searchTerm, searchField);
   }
 
   @Post('/')
@@ -38,7 +48,7 @@ export class PatientController {
   }
 
   @Delete('/:id')
-  delete(@Param('id') id: string): Promise<Patient> {
+  delete(@Param('id') id: string): Promise<boolean> {
     return this.patientService.deletePatient(id);
   }
 }
