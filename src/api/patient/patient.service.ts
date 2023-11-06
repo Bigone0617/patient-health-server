@@ -34,10 +34,10 @@ export class PatientService {
         query = { name: { $regex: searchTerm, $options: 'i' } };
         break;
       case 'underlyingConditions':
-        query = { underlyingConditions: { $in: [searchTerm] } };
+        query = { underlyingConditions: { $regex: searchTerm, $options: 'i' } };
         break;
       case 'painAreas':
-        query = { painAreas: { $in: [searchTerm] } };
+        query = { painAreas: { $regex: searchTerm, $options: 'i' } };
         break;
       default:
         throw new Error('Invalid search field');

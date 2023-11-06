@@ -30,7 +30,6 @@ export class PatientController {
     @Query('searchTerm') searchTerm: string,
     @Query('searchField') searchField: string,
   ): Promise<Patient[]> {
-    console.log('adasdada');
     return this.patientService.getPatientsBySearch(searchTerm, searchField);
   }
 
