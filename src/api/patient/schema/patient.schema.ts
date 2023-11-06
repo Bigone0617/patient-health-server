@@ -44,13 +44,8 @@ export class Patient {
   @Prop({
     required: true,
   })
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsString({
-    each: true,
-    message: '기저질환의 각 요소들은 문자열이어야 합니다.',
-  })
-  underlyingConditions: string[];
+  @IsString()
+  underlyingConditions: string;
 
   @Prop({
     required: true,
