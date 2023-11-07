@@ -4,9 +4,7 @@ import { PatientModule } from './api/patient/patient.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://patient-health:humanscape@patient-health.waxxptg.mongodb.net/patientHealth?retryWrites=true&w=majority',
-    ),
+    MongooseModule.forRoot('여기에 이메일에서 받은 값을 넣어주세요!'),
     PatientModule,
   ],
 })
