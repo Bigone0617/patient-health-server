@@ -17,3 +17,12 @@
 ## 사용 모듈
 - @nestjs/class-validator
 - @nestjs/mongoose 
+
+
+## 문제풀이
+- app.controller에서 비지니스 로직 컨트롤 하는 것이 아닌, api폴더 안에 각각의 비지니스 로직별로 폴더를 분리.
+- 기저질환은 단일 선택이므로 string
+- 통증부위는 다중 선택이므로 string[]
+- 환자 관련된 api는 patient 폴더에 구성.
+  - 기본적인 CRUD 구성.
+  - 검색용 api 추가.
